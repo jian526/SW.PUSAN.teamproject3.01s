@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>회원가입 | 건설사고 예측 시스템</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html" class="logo-link">
+          <img src="/static/logo.png" alt="로고" class="logo-img" />
+          <div class="nav-title">건설사고 예측 시스템</div>
+        </a>
+      </div>
+      <div class="nav-center">
+        <a href="index.html">홈</a>
+        <a href="predict.html">사고 예측</a>
+        <a href="cases.html">사례 검색</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEcp88hAtCP8cyPYWTjYlGdaP1M-UiiJQ0zszvE-rgoSHmeg/viewform?usp=sharing">문의하기</a>
+      </div>
+      <div class="nav-right">
+        <span id="user-badge"></span>
+        <a href="login.html" id="login-btn">로그인</a>
+        <a href="/logout" id="logout-btn">로그아웃</a>
+        <a href="signup.html">회원가입</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="login-main">
+    <div class="login-box">
+      <h2>회원가입</h2>
+      <form method="post" action="/signup">
+        <input type="text" name="name" placeholder="이름" required />
+        <input type="email" name="email" placeholder="이메일" required />
+        <input type="password" name="password" placeholder="비밀번호" required />
+        <input type="password" name="confirm_password" placeholder="비밀번호 확인" required />
+        <button type="submit" class="login-btn">가입하기</button>
+      </form>
+      <form action="login.html" method="get">
+        <button type="submit" class="signup-btn">이미 계정이 있으신가요?</button>
+      </form>
+      <div class="logo">
+        <img src="/static/logo.png" alt="로고" />
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 건설사고 예측 시스템. All rights reserved.</p>
+      <p>01즈_ 강지호, 김용석, 김지안, 나연희, 최예진</p>
+    </div>
+  </footer>
+
+  <script src="/static/js/signup.js"></script>
+</body>
+</html>

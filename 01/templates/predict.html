@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사고 예측 | 건설사고 예측 시스템</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<!-- js 수정할거 1. 머런들어오면 그래프랑 상위3개 바꾸기, 회원 이름 js 변수이름 바꾸기 -->
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html" class="logo-link">
+          <img src="/static/logo.png" alt="로고" class="logo-img">
+          <div class="nav-title">건설사고 예측 시스템</div>
+        </a>
+      </div>
+      <div class="nav-center">
+        <a href="index.html">홈</a>
+        <a href="predict.html">사고 예측</a>
+        <a href="cases.html">사례 검색</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEcp88hAtCP8cyPYWTjYlGdaP1M-UiiJQ0zszvE-rgoSHmeg/viewform?usp=sharing">문의하기</a>
+
+      </div>
+      <div class="nav-right">
+        <span id="user-badge"></span>
+        <a href="login.html" id="login-btn">로그인</a>
+        <a href="/logout" id="logout-btn">로그아웃</a>
+        <a href="signup.html">회원가입</a>
+      </div>
+    </div>
+  </header>
+  
+
+  <main>
+    <div class="predict-wrapper">
+  
+      <!-- 왼쪽: 입력 섹션 -->
+      <section class="input-section">
+        <h2>작업 정보를 입력하고<br>사고 위험도를 예측해보세요</h2>
+        <form id="predict-form">
+          <label for="job_type">작업 유형:
+            <select name="job_type" id="job_type" required></select>
+          </label>
+  
+          <label for="temperature">기온 (℃):
+            <input type="number" name="temperature" id="temperature" required>
+          </label>
+  
+          <label for="humidity">습도 (%):
+            <input type="number" name="humidity" id="humidity" required>
+          </label>
+  
+          <label for="equipment">장비 종류:
+            <select name="equipment" id="equipment" required></select>
+          </label>
+  
+          <label for="personnel">작업 인원 (명):
+            <input type="number" name="personnel" id="personnel" required>
+          </label>
+  
+          <label for="date">작업 날짜:
+            <input type="date" name="date" id="date" required>
+          </label>
+  
+          <button type="submit">예측하기</button>
+        </form>
+      </section>
+  
+      <!-- 가운데: 그래프 -->
+      <section class="result-graph-section">
+        <h3>예측 결과 그래프</h3>
+        <div id="predict-result">그래프 들어갈 자리</div>
+      </section>
+  
+      <!-- 오른쪽: 위험 정보 -->
+      <section class="danger-info-section">
+        <div>
+          <h4>상위 위험 3개</h4>
+          <ul id="top-risks-list">
+            <li><span class="risk-type">추락</span><span class="risk-percent">33%</span></li>
+            <li><span class="risk-type">끼임</span><span class="risk-percent">25%</span></li>
+            <li><span class="risk-type">절단</span><span class="risk-percent">19%</span></li>
+          </ul>
+        </div>
+        <div class="safety-tip">
+          <h5>예방 수칙</h5>
+          <ul>
+            <li>안전벨트 착용 확인</li>
+            <li>고소작업대 주변 정리</li>
+            <li>보호구 착용 의무화</li>
+          </ul>
+        </div>
+        
+        <a href="cases.html" class="case-link">유사 사례 검색하러 가기</a>
+      </section>
+      
+  
+    </div>
+  </main>
+  
+  
+
+      <footer class="footer">
+        <div class="footer-content">
+          <p>© 2025 건설사고 예측 시스템. All rights reserved.</p>
+          <p>01즈_ 강지호, 김용석, 김지안, 나연희, 최예진</p>
+        </div>
+      </footer>
+
+<script src="/static/js/predict.js"></script>
+</body>
+</html>

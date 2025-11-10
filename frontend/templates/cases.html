@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사례검색 | 건설사고 예측 시스템 </title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+          <div class="nav-left">
+            <a href="index.html" class="logo-link">
+              <img src="/static/logo.png" alt="로고" class="logo-img">
+              <div class="nav-title">건설사고 예측 시스템</div>
+            </a>
+          </div>
+          <div class="nav-center">
+            <a href="index.html">홈</a>
+            <a href="predict.html">사고 예측</a>
+            <a href="cases.html">사례 검색</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEcp88hAtCP8cyPYWTjYlGdaP1M-UiiJQ0zszvE-rgoSHmeg/viewform?usp=sharing">문의하기</a>
+    
+          </div>
+          <div class="nav-right">
+            <span id="user-badge"></span>
+            <a href="login.html" id="login-btn">로그인</a>
+            <a href="/logout" id="logout-btn">로그아웃</a>
+            <a href="signup.html" id="signup-btn">회원가입</a>
+          </div>
+        </div>
+      </header>
+
+
+    <!-- ✅ 사례 검색 페이지 레이아웃 -->
+<main class="case-search-wrapper">
+
+    <!-- 왼쪽: 필터 선택 영역 -->
+    <section class="filter-section">
+      <label for="constructionType">공사종류</label>
+      <select id="constructionType">
+        <option value="">선택</option>
+        <option>건축</option>
+        <option>토목</option>
+        <option>산업설비</option>
+        <option>조경</option>
+      </select>
+  
+      <label for="accidentType">인적사고</label>
+      <select id="accidentType">
+        <option value="">선택</option>
+        <option>떨어짐</option>
+        <option>끼임</option>
+        <option>넘어짐</option>
+        <option>맞음</option>
+        <option>부딪힘</option>
+        <option>절단,베임</option>
+        <option>깔림</option>
+        <option>질병</option>
+        <option>화상</option>
+        <option>교통사고</option>
+        <option>감전</option>
+        <option>질식</option>
+        <option>기타</option>
+      </select>
+  
+      <label for="weather">날씨</label>
+      <select id="weather">
+        <option value="">선택</option>
+        <option>맑음</option>
+        <option>흐림</option>
+        <option>안개</option>
+        <option>강설</option>
+        <option>강우</option>
+        <option>강풍</option>
+      </select>
+  
+      <label for="temperature">기온</label>
+      <select id="temperature">
+        <option value="">선택</option>
+        <option>추위 (0도 이하)</option>
+        <option>쌀쌀 (1~10도)</option>
+        <option>보통 (11~25도)</option>
+        <option>더움 (26~33도)</option>
+        <option>폭염 (34도 이상)</option>
+      </select>
+  
+      <button id="filterBtn">완료</button>
+    </section>
+  
+    <!-- 오른쪽: 결과 테이블 -->
+    <section class="table-section">
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th class="search">공사종류</th>
+            <th class="search">인적사고</th>
+            <th class="search">날씨</th>
+            <th class="search">기온</th>
+            <th>사고원인</th>
+
+          </tr>
+        </thead>
+        <tbody id="caseTableBody">
+          <!-- JS로 결과 추가 -->
+        </tbody>
+      </table>
+    </section>
+  
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 건설사고 예측 시스템. All rights reserved.</p>
+      <p>01즈_ 강지호, 김용석, 김지안, 나연희, 최예진</p>
+    </div>
+  </footer>
+
+  <script src="/static/js/cases.js"></script>
+  <script src="/static/js/logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>건설사고 예측 시스템</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
+
+      
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="nav-container">
+        <div class="nav-left">
+          <a href="index.html" class="logo-link">
+            <img src="/static/logo.png" alt="로고" class="logo-img">
+            <div class="nav-title">건설사고 예측 시스템</div>
+          </a>
+        </div>
+        <div class="nav-center">
+          <a href="index.html">홈</a>
+          <a href="predict.html">사고 예측</a>
+          <a href="cases.html">사례 검색</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEcp88hAtCP8cyPYWTjYlGdaP1M-UiiJQ0zszvE-rgoSHmeg/viewform?usp=sharing">문의하기</a>
+
+        </div>
+        <div class="nav-right">
+          <span id="user-badge"></span>
+          <a href="login.html" id="login-btn">로그인</a>
+          <a href="/logout" id="logout-btn">로그아웃</a>
+          <a href="signup.html">회원가입</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      
+      <div class="main_visual"></div>
+      <div class="main-visual">
+        <div class="login-panel">
+          <h2 id="welcome-message"></h2>
+          
+            <div id="login-panel" class="login-btns-wrap">
+              <h2 id="login-text">로그인하셔서<br>필요한 서비스 바로 확인하세요.</h2>
+              <div class="login-btns">
+                <a href="login.html" class="btn-login">로그인</a>
+                <a href="signup.html" class="btn-signup">회원가입</a>
+              </div>
+            
+            </div>
+            <div class="alert-boxes">
+              <a href="predict.html" class="alert-btn">사고 예측하기 👷‍♂️</a>
+              <a href="cases.html" class="alert-btn">사례 검색 🔍</a>
+            </div>
+        </div>
+        
+      </div>
+
+
+      <section class="swiper-section">
+        <h2> 안전보건 교육영상</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="https://youtu.be/9TM9MgXlNbQ" target="_blank"><img src="https://img.youtube.com/vi/9TM9MgXlNbQ/0.jpg" alt="유해, 위험요인 파악" /></a></div>
+            <div class="swiper-slide"><a href="https://youtu.be/4TdmTAJWGA4" target="_blank"><img src="https://img.youtube.com/vi/4TdmTAJWGA4/0.jpg" alt="위험성 수준 판단법" /></a></div>
+            <div class="swiper-slide"><a href="https://youtu.be/7QTFxpsfXBM" target="_blank"><img src="https://img.youtube.com/vi/7QTFxpsfXBM/0.jpg" alt="위험성 결정 체크리스트" /></a></div>
+            <div class="swiper-slide"><a href="https://youtu.be/87zKiP3ekD8" target="_blank"><img src="https://img.youtube.com/vi/87zKiP3ekD8/0.jpg" alt="위험성 결정 빈도 강도" /></a></div>
+            <div class="swiper-slide"><a href="https://youtu.be/sJL8gsDf9tU" target="_blank"><img src="https://img.youtube.com/vi/sJL8gsDf9tU/0.jpg" alt="위험성 평가 요약정리" /></a></div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <section class="law-section">
+        <h2>산업재해보상보험법 확인하기</h2>
+        <div class="law">
+        <iframe 
+          src="/static/sanlaw.pdf" 
+
+        ></iframe>
+      </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 건설사고 예측 시스템. All rights reserved.</p>
+        <p>01즈_ 강지호, 김용석, 김지안, 나연희, 최예진</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/js/index.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>//스와이퍼 js
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      grabCursor: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 4
+        },
+        1024: {
+          slidesPerView: 5
+        }
+      }
+    });
+
+    const ctx = document.getElementById('statChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['사고예방', '사례발생', '대응완료'],
+        datasets: [{
+          label: '2025년 통계',
+          data: [12, 19, 9],
+          backgroundColor: ['#5F7470', '#889696', '#B5BDB5']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+  </script>
+  <script src="/static/js/logout.js"></script>
+</body>
+</html>
